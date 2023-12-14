@@ -1,0 +1,29 @@
+{
+    "name": "privacy final",
+    "version": "1.0.0",
+    "description": "a statement on privacy tracking on the internet",
+    "manifest_version": 3,
+    "author": "Raine Taber",
+    "action":{
+        "default_popup":"index.html",
+        "default_title":"Privacy final"
+    },
+    "background":{
+        "service_worker":"scripts/service_worker.js"
+    },
+    "content_scripts":[
+        {
+            "js":["scripts/p5.js","scripts/sketch.js"],
+            "css":["css/project-css.css"],
+            "run_at":"document_idle",
+            "matches":["<all_urls>"]
+        }
+    ],
+    "host_permissions":[
+        "https://*/*"
+    ],
+    "permissions":[
+        "cookies",
+        "tabs"
+    ]
+}
